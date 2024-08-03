@@ -141,10 +141,10 @@ export default async function Home({
   return (
     <>
       <div className="h-max pb-4 transition-colors duration-500 md:p-8">
-        <div className="mb-6 flex items-center justify-between px-8 pt-3">
-          <div className="text-3xl text-black transition-colors duration-500 dark:text-white">
-            <h1 className="text-black dark:text-white">Questions</h1>
-          </div>
+        <div className="mb-8 flex items-center justify-between px-6 pt-4">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">
+            Questions
+          </h1>
           <Link
             className="light:text-black sticky rounded-md bg-black p-3 text-white transition-colors duration-500 dark:bg-white dark:text-black"
             href={getUpdatedUrl('/questions', searchParams, {
@@ -157,6 +157,7 @@ export default async function Home({
             New Question
           </Link>
         </div>
+
         <NewPostDialog />
         <div className="mx-auto md:mx-[15%] md:p-10">
           <div className="flex flex-col items-center p-4 dark:text-white">
