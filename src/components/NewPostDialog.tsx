@@ -155,7 +155,7 @@ import { useTheme } from 'next-themes';
 import { getUpdatedUrl, searchParamsToObject } from '@/lib/utils';
 import { FormPostInput } from './posts/form/form-input';
 import { FormPostErrors } from './posts/form/form-errors';
-import { XCircle } from 'lucide-react';
+import { AiOutlineClose } from 'react-icons/ai';
 
 export const NewPostDialog = () => {
   const { theme } = useTheme();
@@ -239,10 +239,10 @@ export const NewPostDialog = () => {
           >
             <button
               type="button"
-              className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-white"
+              className="absolute right-2 top-2 rounded-full bg-red-600 p-2 text-white hover:bg-red-700 focus:outline-none"
               onClick={handleOnCloseClick}
             >
-              <XCircle className="h-4 w-4" />
+              <AiOutlineClose className="h-4 w-4" />
             </button>
             <FormPostInput
               id="title"
@@ -257,7 +257,7 @@ export const NewPostDialog = () => {
                   value={value}
                   onChange={handleMarkdownChange}
                   style={{ height: '100%' }}
-                  height={editorHeight - 250}
+                  height={editorHeight - (fieldErrors ? 300 : 250)}
                   visibleDragbar={false}
                 />
                 <FormPostErrors id="content" errors={fieldErrors} />
